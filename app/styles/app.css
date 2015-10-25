@@ -1,0 +1,52 @@
+body {
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  margin: 0 0 1em;
+  background: #006600;
+  color: #fff;
+  padding: 0.2em;
+}
+
+header h1 {
+  font-size: 1.2em;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.story-title {
+  font-weight: bold;
+  border: none;
+  font-size: 1.2em;
+  margin: 0.8em;
+}
+
+.specification {
+  background: #c2c2c2;
+  font-family: monospace;
+  margin: 1em;
+  padding: 1em;
+}
+
+.story-scenario {
+  margin: 0.5em 0;
+}
+
+.story-scenario h1 {
+  color: #321f3b;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0 0 0.6em;
+}
+
+.story-step {
+  padding: 0.1em;
+}
+
+.step-type {
+  color: #000066;
+  font-weight: bold;
+}

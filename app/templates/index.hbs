@@ -1,0 +1,10 @@
+{{input class="story-title" value=model.title}}
+
+<div class="specification">
+  {{#each scenario in model.scenarios}}
+    {{story-scenario title=scenario.title steps=scenario.steps}}
+  {{/each}}
+  <button {{action 'addScenario'}}>Add scenario</button>
+</div>
+
+{{outlet}}

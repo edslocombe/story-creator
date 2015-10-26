@@ -1,4 +1,8 @@
-{{input class="story-title" value=model.title}}
+{{content-editable
+  class="story-title"
+  value=model.title
+  tagName="h1"
+  placeholder="Story Title"}}
 
 <div class="specification">
   {{#each scenario in model.scenarios}}

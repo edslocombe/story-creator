@@ -1,6 +1,39 @@
 <h1>Scenario:
   {{content-editable value=title placeholder="Scenario Title" tagName="span"}}</h1>
 
-{{#each step in steps}}
-  {{story-step step=step}}
-{{/each}}
+{{#if renderExamplesExpanded}}
+
+  {{#each example in examples}}
+    <div class="scenario-example">
+      {{#each step in steps}}
+        {{story-step step=step}}
+      {{/each}}
+    </div>
+  {{/each}}
+
+{{else}}
+
+  <div class="scenario-example">
+    {{#each step in steps}}
+      {{story-step step=step}}
+    {{/each}}
+  </div>
+
+  {{#if examples}}
+
+    <table>
+      <thead>
+      {{#each param in parameters}}
+        <td>{{param}}</td>
+      {{/each}}
+      </thead>
+      <tbody>
+        {{#each example in examples}}
+          <tr></tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+  {{/if}}
+
+{{/if}}

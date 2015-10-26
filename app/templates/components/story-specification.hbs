@@ -1,0 +1,16 @@
+<div class="controls">
+  <label>Expand Examples: {{input type="checkbox" checked=expandExamples}}</label>
+</div>
+
+<div class="scenarios">
+  {{#each scenario in scenarios}}
+    {{story-scenario
+      steps=scenario.steps
+      examples=scenario.examples
+      parameters=scenario.parameters
+      title=scenario.title
+      expandExamples=expandExamples}}
+  {{/each}}
+
+  <button {{action 'addScenario'}}>Add scenario</button>
+</div>

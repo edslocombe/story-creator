@@ -9,11 +9,12 @@ export default Ember.Component.extend({
   compiledStep: Ember.computed('step', 'example', function() {
     let example = this.get('example');
     let template = this.get('step.template');
-    let params = /<([^>]+)>/.exec(template);
 
-    return (params ? params.slice(1) : []).reduce(function(template, paramKey) {
+    return (this.get('step.parameterKeys') || []).reduce((template, paramKey) => {
       let paramLabel = example ? example.getParameterValue(paramKey) : '<' + paramKey + '>';
-      let substitution = '<span class="step-param">' + paramLabel.replace('<', '&lt;').replace('>', '&gt;') + '</span>';
+      let substitution = '<span class="step-param">' + paramLabel
+          .replace('<', '&lt;')
+          .replace('>', '&gt;') + '</span>';
 
       return template.replace('<' + paramKey + '>', substitution);
     }, template);

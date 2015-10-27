@@ -21,18 +21,20 @@
 
   {{#if examples}}
 
-    <table>
-      <thead>
-      {{#each param in parameters}}
-        <td>{{param}}</td>
-      {{/each}}
-      </thead>
-      <tbody>
+    <div class="scenario-examples-table">
+      <h5>Examples:</h5>
+      <table>
+        <thead>
+          <td>|</td>
+          {{#each param in parameters}}
+            <td>{{param}}</td><td>|</td>
+          {{/each}}
+        </thead>
         {{#each example in examples}}
-          <tr></tr>
+          {{step-example-row example=example parameterKeys=parameters}}
         {{/each}}
-      </tbody>
-    </table>
+      </table>
+    </div>
 
   {{/if}}
 

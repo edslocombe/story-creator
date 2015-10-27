@@ -19,15 +19,15 @@ test('Angled-bracket parameters supported', function(assert) {
     model.set('template', 'I am a <site> user');
   });
 
-  assert.deepEqual([ 'site' ], model.get('parameters'));
+  assert.deepEqual(model.get('parameterKeys'), [ 'site' ]);
 });
 
-test('Variables parameters supported', function(assert) {
+test('Multiple parameters supported', function(assert) {
   var model = this.subject();
 
   Ember.run(function() {
-    model.set('template', 'I am a $site user');
+    model.set('template', 'I am a <site> user <user>');
   });
 
-  assert.deepEqual([ 'site' ], model.get('parameters'));
+  assert.deepEqual(model.get('parameterKeys'), [ 'site', 'user' ]);
 });

@@ -1,5 +1,4 @@
 import { moduleForModel, test } from 'ember-qunit';
-import Parameter from 'story-creator/models/parameter';
 import Ember from 'ember';
 
 moduleForModel('example', 'Unit | Model | example', {
@@ -17,10 +16,10 @@ test('Parameter by key', function(assert) {
   var model = this.subject();
 
   Ember.run(function() {
-    model.set('parameters', [
+    model.set('parameters', Ember.A([
       this.store().createRecord('parameter', { key: 'site', value: 'IGM' }),
       this.store().createRecord('parameter', { key: 'user', value: 'pdtestuser000' })
-    ]);
+    ]));
   }.bind(this));
 
   assert.equal('IGM', model.getParameterValue('site'));

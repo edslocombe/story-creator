@@ -6,19 +6,17 @@ export default DS.Model.extend({
   type: DS.attr('string'),
   template: DS.attr('string'),
 
-  parameters: Ember.computed('template', function() {
+  parameterKeys: Ember.computed('template', function() {
     let template = this.get('template');
-    let params = [];
-    let matches;
+    let pattern = new RegExp('<([^>]+)>', 'g');
+    let matches = [];
+    let singleMatch;
 
-    if (!!(matches = /<([^>]+)>/.exec(template))) {
-      params = params.concat(matches.slice(1));
-    }
-    if (!!(matches = /\$([^ ]+)/.exec(template))) {
-      params = params.concat(matches.slice(1));
+    while (singleMatch = pattern.exec(template)) {
+      matches.push(singleMatch[1]);
     }
 
-    return params;
+    return matches;
   })
 
 });

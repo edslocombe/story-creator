@@ -6,7 +6,7 @@
   {{#each example in examples}}
     <div class="scenario-example">
       {{#each step in steps}}
-        {{story-step step=step}}
+        {{story-step step=step example=example}}
       {{/each}}
     </div>
   {{/each}}

@@ -1,6 +1,4 @@
 import Ember from 'ember';
-import Scenario from '../models/scenario';
-import Step from '../models/step';
 
 export default Ember.Route.extend({
   model: function () {

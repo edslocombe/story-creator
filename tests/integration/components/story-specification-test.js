@@ -6,21 +6,6 @@ moduleForComponent('story-specification', 'Integration | Component | story speci
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+  assert.expect(0);
   this.render(hbs`{{story-specification}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#story-specification}}
-      template block text
-    {{/story-specification}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
 });

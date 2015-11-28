@@ -3,9 +3,9 @@
 
 {{#if renderExamplesExpanded}}
 
-  {{#each example in examples}}
+  {{#each examples as |example|}}
     <div class="scenario-example">
-      {{#each step in steps}}
+      {{#each steps as |step|}}
         {{story-step step=step example=example}}
       {{/each}}
     </div>
@@ -14,7 +14,7 @@
 {{else}}
 
   <div class="scenario-example">
-    {{#each step in steps}}
+    {{#each steps as |step|}}
       {{story-step step=step}}
     {{/each}}
   </div>
@@ -26,11 +26,11 @@
       <table>
         <thead>
           <td>|</td>
-          {{#each param in parameters}}
+          {{#each parameters as |param|}}
             <td>{{param}}</td><td>|</td>
           {{/each}}
         </thead>
-        {{#each example in examples}}
+        {{#each examples as |example|}}
           {{step-example-row example=example parameterKeys=parameters}}
         {{/each}}
       </table>

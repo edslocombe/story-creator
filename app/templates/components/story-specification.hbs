@@ -3,7 +3,7 @@
 </div>
 
 <div class="scenarios">
-  {{#each scenario in scenarios}}
+  {{#each scenarios as |scenario|}}
     {{story-scenario
       steps=scenario.steps
       examples=scenario.examples

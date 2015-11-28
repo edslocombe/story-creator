@@ -8,19 +8,12 @@ export default DS.Model.extend({
   examples: DS.hasMany('example'),
 
   parameters: Ember.computed('steps', function() {
-    let uniqueParams = [];
-
-    this.get('steps')
+    return Object.keys(this.get('steps')
       .reduce((params, step) => {
-        step.get('parameterKeys').forEach(p => { params.add(p); });
+        step.get('parameterKeys').forEach(p => { params[p] = null; });
 
         return params;
-      }, new Set())
-      .forEach(paramKey => {
-        uniqueParams.push(paramKey);
-      });
-
-    return uniqueParams;
+      }, {}));
   })
 
 });

@@ -15,12 +15,12 @@ test('it exists', function(assert) {
 test('Parameter by key', function(assert) {
   var model = this.subject();
 
-  Ember.run(function() {
+  Ember.run(() => {
     model.set('parameters', Ember.A([
       this.store().createRecord('parameter', { key: 'site', value: 'IGM' }),
       this.store().createRecord('parameter', { key: 'user', value: 'pdtestuser000' })
     ]));
-  }.bind(this));
+  });
 
   assert.equal('IGM', model.getParameterValue('site'));
 });

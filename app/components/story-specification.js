@@ -4,6 +4,6 @@ export default Ember.Component.extend({
 
   classNames: [ 'story-specification' ],
 
-  expandExamples: true
+  expandExamples: false
 
 });
